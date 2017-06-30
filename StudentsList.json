@@ -1,0 +1,158 @@
+{
+    "studentList": [{
+                    "id": 101,
+                    "name": "Jesse Holmes",
+                    "marks": 397,
+                    "status": "Pass",
+                    "subjects": [{
+                                 "subjectName": "English",
+                                 "marksObtained": 80
+                                 },
+                                 {
+                                 "subjectName": "Mathematics",
+                                 "marksObtained": 70
+                                 },
+                                 {
+                                 "subjectName": "Physics",
+                                 "marksObtained": 66
+                                 },
+                                 {
+                                 "subjectName": "Chemistry",
+                                 "marksObtained": 53
+                                 },
+                                 {
+                                 "subjectName": "Drawing",
+                                 "marksObtained": 74
+                                 },
+                                 {
+                                 "subjectName": "Biology",
+                                 "marksObtained": 54
+                                 }
+                                 ]
+                    },
+                    {
+                    "id": 102,
+                    "name": "David Christoper",
+                    "marks": 367,
+                    "status": "Pass",
+                    "subjects": [{
+                                 "subjectName": "English",
+                                 "marksObtained": 90
+                                 },
+                                 {
+                                 "subjectName": "Mathematics",
+                                 "marksObtained": 65
+                                 },
+                                 {
+                                 "subjectName": "Physics",
+                                 "marksObtained": 56
+                                 },
+                                 {
+                                 "subjectName": "Chemistry",
+                                 "marksObtained": 45
+                                 },
+                                 {
+                                 "subjectName": "Drawing",
+                                 "marksObtained": 35
+                                 },
+                                 {
+                                 "subjectName": "Biology",
+                                 "marksObtained": 76
+                                 }
+                                 ]
+                    },
+                    {
+                    "id": 103,
+                    "name": "James Braylkor",
+                    "marks": 514,
+                    "status": "Pass",
+                    "subjects": [{
+                                 "subjectName": "English",
+                                 "marksObtained": 90
+                                 },
+                                 {
+                                 "subjectName": "Mathematics",
+                                 "marksObtained": 95
+                                 },
+                                 {
+                                 "subjectName": "Physics",
+                                 "marksObtained": 80
+                                 },
+                                 {
+                                 "subjectName": "Chemistry",
+                                 "marksObtained": 85
+                                 },
+                                 {
+                                 "subjectName": "Drawing",
+                                 "marksObtained": 70
+                                 },
+                                 {
+                                 "subjectName": "Biology",
+                                 "marksObtained": 94
+                                 }
+                                 ]
+                    },
+                    {
+                    "id": 104,
+                    "name": "Oliva Joshi",
+                    "marks": 435,
+                    "status": "Pass",
+                    "subjects": [{
+                                 "subjectName": "English",
+                                 "marksObtained": 70
+                                 },
+                                 {
+                                 "subjectName": "Mathematics",
+                                 "marksObtained": 75
+                                 },
+                                 {
+                                 "subjectName": "Physics",
+                                 "marksObtained": 54
+                                 },
+                                 {
+                                 "subjectName": "Chemistry",
+                                 "marksObtained": 82
+                                 },
+                                 {
+                                 "subjectName": "Drawing",
+                                 "marksObtained": 67
+                                 },
+                                 {
+                                 "subjectName": "Biology",
+                                 "marksObtained": 87
+                                 }
+                                 ]
+                    },
+                    {
+                    "id": 105,
+                    "name": "Jason Taylor",
+                    "marks": 167,
+                    "status": "Fail",
+                    "subjects": [{
+                                 "subjectName": "English",
+                                 "marksObtained": 35
+                                 },
+                                 {
+                                 "subjectName": "Mathematics",
+                                 "marksObtained": 30
+                                 },
+                                 {
+                                 "subjectName": "Physics",
+                                 "marksObtained": 13
+                                 },
+                                 {
+                                 "subjectName": "Chemistry",
+                                 "marksObtained": 12
+                                 },
+                                 {
+                                 "subjectName": "Drawing",
+                                 "marksObtained": 54
+                                 },
+                                 {
+                                 "subjectName": "Biology",
+                                 "marksObtained": 23
+                                 }
+                                 ]
+                    }
+                    ]
+}
