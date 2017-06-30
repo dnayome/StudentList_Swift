@@ -76,8 +76,8 @@
 		5BF270D71F06243200473C6A = {
 			isa = PBXGroup;
 			children = (
-				5BF271061F062D1F00473C6A /* Resources */,
 				5BF270E21F06243200473C6A /* StudentList */,
+				5BF271061F062D1F00473C6A /* Resources */,
 				5BF270F41F06243200473C6A /* StudentListTests */,
 				5BF270E11F06243200473C6A /* Products */,
 			);
@@ -95,10 +95,10 @@
 		5BF270E21F06243200473C6A /* StudentList */ = {
 			isa = PBXGroup;
 			children = (
-				5BF2711C1F064E7400473C6A /* Common Classes */,
-				5BF271051F06264D00473C6A /* Controller */,
-				5BF271041F06263200473C6A /* View */,
 				5BF271001F06259E00473C6A /* Model */,
+				5BF271041F06263200473C6A /* View */,
+				5BF271051F06264D00473C6A /* Controller */,
+				5BF2711C1F064E7400473C6A /* Common Classes */,
 				5BF270E31F06243200473C6A /* AppDelegate.swift */,
 				5BF270E71F06243200473C6A /* Assets.xcassets */,
 				5BF270EC1F06243200473C6A /* Info.plist */,
@@ -475,6 +475,7 @@
 				5BF270FC1F06243200473C6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BF270FD1F06243200473C6A /* Build configuration list for PBXNativeTarget "StudentListTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				5BF270FF1F06243200473C6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
