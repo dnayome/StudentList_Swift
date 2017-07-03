@@ -8,12 +8,12 @@
 
 import Cocoa
 
-protocol StudentsListViewControllerDelegate: class {
+protocol StudentsListViewControllerDelegate {
     func showDetailsOf(selectedStudent: Student)
 }
 
 class StudentsListViewController: NSViewController, NSTableViewDelegate {
-    weak var delegate: StudentsListViewControllerDelegate? = nil
+     var delegate: StudentsListViewControllerDelegate? = nil
     dynamic var studentsList = [Student]()
     @IBOutlet var studentsListArrayController: NSArrayController!
 

@@ -10,38 +10,47 @@ import Cocoa
 
 class DataFetcher {
     
-    func fetchStudentsListFromJSON() -> [Student] {
+    enum fetcherResponse {
+        case success([Student])
+        case failure(NSError)
+    }
+    func fetchStudentsListFromJSONWithCompletionHandler(completionHandler: @escaping (fetcherResponse) -> Void) {
+        var result: fetcherResponse
         let url = Bundle.main.url(forResource: "StudentsList", withExtension: "json")
-    
         if let url = url {
             do {
                 let data = try Data(contentsOf: url, options: .alwaysMapped)
                 //handle the error thrown
                 do {
-                    return self.parse(theData: data)
+                    result = try self.parse(theData: data)
                 }
-            } catch _ {
-                return []
+                catch let error {
+                    result = .failure(error as NSError)
+                }
+            } catch let error {
+                result = .failure(error as NSError)
+            }
+            OperationQueue.main.addOperation {
+                completionHandler(result)
             }
         }
-        return []
     }
 
-    func parse(theData: Data) -> [Student]
+    func parse(theData: Data) throws-> fetcherResponse
     {
         var studentDetails:NSDictionary?
         do {
             studentDetails = try JSONSerialization.jsonObject(with: theData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
         } catch let error {
             print("\(error.localizedDescription)")
-            return []
+            return .failure(error as NSError)
         }
         
         var listOfStudents: [Student] = []
         if let studentDetails = studentDetails {
             guard let listRetreived = studentDetails[Constants.kStudentList] as? [NSDictionary] else {
-                print("Unable retreive data")
-                return []
+                let error = NSError.init(domain: Constants.domainName, code: 1001, userInfo: nil)
+                return .failure(error as NSError)
             }
             
             for studentData in listRetreived {
@@ -50,11 +59,8 @@ class DataFetcher {
                     listOfStudents.append(details)
                 }
             }
-            return listOfStudents
+            return .success(listOfStudents)
         }
-        else
-        {
-            return []
-        }
+        return .failure(NSError.init(domain: Constants.domainName, code: 1002, userInfo: nil))
     }
 }

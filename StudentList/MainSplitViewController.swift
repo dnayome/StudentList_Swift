@@ -22,15 +22,24 @@ class MainSplitViewController: NSSplitViewController,StudentsListViewControllerD
         // Do view setup here.
         listViewController.delegate = self
         let dataFetcher = DataFetcher()
-        listViewController.studentsList =  dataFetcher.fetchStudentsListFromJSON()
-        if let studentData = (listViewController.studentsListArrayController.arrangedObjects as? [Student]) {
+        dataFetcher.fetchStudentsListFromJSONWithCompletionHandler { (fetcherResponse) -> Void in
+            switch fetcherResponse
+            {
+            case .success(let studentsList):
+                self.listViewController.studentsList =  studentsList
+                if let studentData = (self.listViewController.studentsListArrayController.arrangedObjects as? [Student]) {
+                    self.detailViewController.loadDetails(ofStudent: studentData[0])
+                }
 
-        detailViewController.loadDetails(ofStudent: studentData[0])
+            case .failure(let error):
+                NSAlert (error:error).runModal()
+                self.listViewController.studentsList = []
+            }
+            
         }
 
     }
     func showDetailsOf(selectedStudent: Student) {
-        print(selectedStudent)
         detailViewController.loadDetails(ofStudent: selectedStudent)
     }
 

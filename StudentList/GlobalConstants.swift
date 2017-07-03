@@ -16,5 +16,6 @@ struct Constants {
     static let kStudentSubjects = "subjects"
     static let kStudentId = "id"
     static let kStudentList = "studentList"
+    static let domainName = "DataFetcher"
 
 }
