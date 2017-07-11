@@ -8,12 +8,12 @@
 
 import Cocoa
 
-protocol StudentsListViewControllerDelegate {
+protocol StudentsListViewControllerDelegate: class {
     func showDetailsOf(selectedStudent: Student)
 }
 
-class StudentsListViewController: NSViewController, NSTableViewDelegate {
-     var delegate: StudentsListViewControllerDelegate? = nil
+class StudentsListViewController: NSViewController {
+    weak var delegate: StudentsListViewControllerDelegate? = nil
     dynamic var studentsList = [Student]()
     @IBOutlet var studentsListArrayController: NSArrayController!
 
@@ -29,6 +29,9 @@ class StudentsListViewController: NSViewController, NSTableViewDelegate {
         }
     }
     
+}
+
+extension StudentsListViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
         if tableColumn?.identifier == Constants.kStudentStatus
         {

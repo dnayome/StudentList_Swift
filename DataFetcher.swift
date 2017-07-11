@@ -14,7 +14,7 @@ class DataFetcher {
         case success([Student])
         case failure(NSError)
     }
-    func fetchStudentsListFromJSONWithCompletionHandler(completionHandler: @escaping (fetcherResponse) -> Void) {
+    func fetchStudentsListFromJSON(completionHandler: @escaping (fetcherResponse) -> Void) {
         var result: fetcherResponse
         let url = Bundle.main.url(forResource: "StudentsList", withExtension: "json")
         if let url = url {
@@ -38,17 +38,17 @@ class DataFetcher {
 
     func parse(theData: Data) throws-> fetcherResponse
     {
-        var studentDetails:NSDictionary?
+        var studentsDetails:NSDictionary?
         do {
-            studentDetails = try JSONSerialization.jsonObject(with: theData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+            studentsDetails = try JSONSerialization.jsonObject(with: theData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
         } catch let error {
             print("\(error.localizedDescription)")
             return .failure(error as NSError)
         }
         
         var listOfStudents: [Student] = []
-        if let studentDetails = studentDetails {
-            guard let listRetreived = studentDetails[Constants.kStudentList] as? [NSDictionary] else {
+        if let studentsDetails = studentsDetails {
+            guard let listRetreived = studentsDetails[Constants.kStudentList] as? [NSDictionary] else {
                 let error = NSError.init(domain: Constants.domainName, code: 1001, userInfo: nil)
                 return .failure(error as NSError)
             }

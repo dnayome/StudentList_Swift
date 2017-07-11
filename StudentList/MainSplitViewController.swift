@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-class MainSplitViewController: NSSplitViewController,StudentsListViewControllerDelegate{
+class MainSplitViewController: NSSplitViewController{
 
     var listViewController: StudentsListViewController {
         return splitViewItems[0].viewController as! StudentsListViewController
@@ -21,24 +21,26 @@ class MainSplitViewController: NSSplitViewController,StudentsListViewControllerD
         super.viewDidLoad()
         // Do view setup here.
         listViewController.delegate = self
+        
         let dataFetcher = DataFetcher()
-        dataFetcher.fetchStudentsListFromJSONWithCompletionHandler { (fetcherResponse) -> Void in
-            switch fetcherResponse
-            {
+        dataFetcher.fetchStudentsListFromJSON { [weak self] (fetcherResponse) in
+            guard let weakSelf = self else {return}
+            switch fetcherResponse {
             case .success(let studentsList):
-                self.listViewController.studentsList =  studentsList
-                if let studentData = (self.listViewController.studentsListArrayController.arrangedObjects as? [Student]) {
-                    self.detailViewController.loadDetails(ofStudent: studentData[0])
+                weakSelf.listViewController.studentsList =  studentsList
+                if let studentData = (weakSelf.listViewController.studentsListArrayController.arrangedObjects as? [Student]) {
+                    weakSelf.detailViewController.loadDetails(ofStudent: studentData[0])
                 }
-
             case .failure(let error):
                 NSAlert (error:error).runModal()
-                self.listViewController.studentsList = []
+                weakSelf.listViewController.studentsList = []
             }
-            
         }
-
     }
+}
+
+extension MainSplitViewController: StudentsListViewControllerDelegate {
+ 
     func showDetailsOf(selectedStudent: Student) {
         detailViewController.loadDetails(ofStudent: selectedStudent)
     }

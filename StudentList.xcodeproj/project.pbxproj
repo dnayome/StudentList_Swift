@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B638E411F14F4840006A11E /* DetailsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B638E401F14F4840006A11E /* DetailsBackgroundView.swift */; };
 		5BF270E41F06243200473C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF270E31F06243200473C6A /* AppDelegate.swift */; };
 		5BF270E81F06243200473C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF270E71F06243200473C6A /* Assets.xcassets */; };
 		5BF270EB1F06243200473C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF270E91F06243200473C6A /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B638E401F14F4840006A11E /* DetailsBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsBackgroundView.swift; sourceTree = "<group>"; };
 		5BF270E01F06243200473C6A /* StudentList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF270E31F06243200473C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF270E71F06243200473C6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		5BF270E21F06243200473C6A /* StudentList */ = {
 			isa = PBXGroup;
 			children = (
+				5BF270E91F06243200473C6A /* Main.storyboard */,
 				5BF271001F06259E00473C6A /* Model */,
 				5BF271041F06263200473C6A /* View */,
 				5BF271051F06264D00473C6A /* Controller */,
@@ -126,7 +129,7 @@
 		5BF271041F06263200473C6A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5BF270E91F06243200473C6A /* Main.storyboard */,
+				5B638E401F14F4840006A11E /* DetailsBackgroundView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				5BF271211F067C7900473C6A /* GlobalConstants.swift in Sources */,
 				5BF271111F0637A600473C6A /* DataFetcher.swift in Sources */,
 				5BF271171F06433D00473C6A /* StudentDetailsViewController.swift in Sources */,
+				5B638E411F14F4840006A11E /* DetailsBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

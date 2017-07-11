@@ -17,7 +17,6 @@ class StudentDetailsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = NSColor.white
     }
     
     func loadDetails(ofStudent: Student) {
@@ -29,18 +28,3 @@ class StudentDetailsViewController: NSViewController {
 
 }
 
-extension NSView {
-    var backgroundColor: NSColor? {
-        get {
-            if let colorRef = self.layer?.backgroundColor {
-                return NSColor(cgColor: colorRef)
-            } else {
-                return nil
-            }
-        }
-        set {
-            self.wantsLayer = true
-            self.layer?.backgroundColor = newValue?.cgColor
-        }
-    }
-}

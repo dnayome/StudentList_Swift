@@ -698,7 +698,7 @@
                 </splitViewController>
                 <customObject id="gtI-7s-9GZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-734" y="576"/>
+            <point key="canvasLocation" x="-695" y="775"/>
         </scene>
         <!--Students List View Controller-->
         <scene sceneID="ufY-ZX-Icf">
@@ -861,7 +861,7 @@
         <scene sceneID="hdo-Cv-piY">
             <objects>
                 <viewController id="M34-Hj-sGp" customClass="StudentDetailsViewController" customModule="StudentList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="j4q-gz-Unx">
+                    <view key="view" id="j4q-gz-Unx" customClass="DetailsBackgroundView" customModule="StudentList" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
